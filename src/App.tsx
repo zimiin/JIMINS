@@ -1,11 +1,10 @@
+import IndexPage from 'page/IndexPage';
 import React, { Component } from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div>Hello!!</div>
-    )
-  }
+function App() {
+  return (
+    <IndexPage />
+  )
 }
 
 export default App
