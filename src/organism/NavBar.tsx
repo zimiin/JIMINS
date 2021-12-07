@@ -3,12 +3,20 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+type ColorMode = 'light' | 'dark'
+type ZIndx = number
+type AbsolutePosition = boolean
+
 interface Props {
-  colorMode?: 'light' | 'dark'
+  colorMode?: ColorMode
+  zIndex?: ZIndx
+  absolutePosition?: AbsolutePosition
 }
 
 type ContainerType = {
-  colorMode?: 'light' | 'dark'
+  colorMode?: ColorMode
+  zIndex?: ZIndx
+  absolutePosition?: AbsolutePosition
 }
 
 const Container = styled.div<ContainerType>`
@@ -20,19 +28,31 @@ const Container = styled.div<ContainerType>`
     }
   }};
   height: 80px;
+  width: 100%;
   text-align: center;
+  z-index: ${props => { return props.zIndex || 0 }};
+  position: ${props => { 
+    if (props.absolutePosition === true) {
+      return 'absolute'
+    } else {
+      return 'relative'
+    }
+  }}
 `
 
 const Title = styled(TitleText)`
   color: white;
   font-size: 50px;
   text-decoration: none;
-  font-family: 'Mitr', sans-serif;
 `
 
 function NavBar(props: Props) {
   return (
-    <Container colorMode={props.colorMode}>
+    <Container 
+      colorMode={props.colorMode}
+      zIndex={props.zIndex}
+      absolutePosition={true}
+    >
       <Title as={Link} to="/">JIMIN'S</Title>
     </Container>
   )
