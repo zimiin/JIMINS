@@ -1,6 +1,7 @@
 import TitleText from 'atom/TitleText'
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 interface Props {
   colorMode?: 'light' | 'dark'
@@ -26,12 +27,13 @@ const Title = styled(TitleText)`
   color: white;
   font-size: 50px;
   text-decoration: none;
+  font-family: 'Mitr', sans-serif;
 `
 
 function NavBar(props: Props) {
   return (
     <Container colorMode={props.colorMode}>
-      <Title as="a" href="#">JIMIN'S</Title>
+      <Title as={Link} to="/">JIMIN'S</Title>
     </Container>
   )
 }

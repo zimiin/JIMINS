@@ -10,6 +10,7 @@ function IndexTemplate() {
   return (
     <Container>
       <NavBar colorMode='dark' />
+      
     </Container>
   )
 }
