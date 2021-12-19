@@ -2,13 +2,16 @@ import LightBulb from 'atom/LightBulb'
 import React from 'react'
 import styled from 'styled-components'
 import xmasTree from 'images/xmas_tree.png'
+import { verticalScale } from 'utils/size'
 
 const Container = styled.div`
   background: #202124;
   height: 100%;
   position: relative;
-  padding-top: 100px;
-  // padding-left: 50px;
+`
+
+const CenterTree = styled.div`
+  padding-top: ${verticalScale(258)}px;
 `
 
 function XmasWelcomeScreen() {
@@ -25,12 +28,14 @@ function XmasWelcomeScreen() {
         color='#45CC7B'
       /> */}
 
-      <img src={xmasTree} style={{
-        // margin: 'auto',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        display: 'block',
-      }}/>
+      <CenterTree>
+        <img src={xmasTree} style={{
+          height: verticalScale(660) + 'px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          display: 'block',
+        }}/>
+      </CenterTree>
     </Container>
   )
 }
