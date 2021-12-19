@@ -45,16 +45,18 @@ function XmasWelcomeScreen() {
 
     for (let i = 0; i < noRow; i++) {
       for (let j = 0; j < noCol; j++) {
-        result.push(
-          <LightBulbBox
-            top={rectHeight * i + getRandomArbitrary(15, rectHeight - 14) + (BROWSER_HEIGHT % rectHeight) / 2}
-            left={rectWidth * j + getRandomArbitrary(15, rectWidth - 14) + (BROWSER_WIDTH % rectWidth) / 2}
-          >
-            <LightBulb
-              color={lightBulbColors[getRandomInt(4)]}
-            />
-          </LightBulbBox>
-        )
+        if (getRandomInt(2) === 0) {
+          result.push(
+            <LightBulbBox
+              top={rectHeight * i + getRandomArbitrary(15, rectHeight - 14) + (BROWSER_HEIGHT % rectHeight) / 2}
+              left={rectWidth * j + getRandomArbitrary(15, rectWidth - 14) + (BROWSER_WIDTH % rectWidth) / 2}
+            >
+              <LightBulb
+                color={lightBulbColors[getRandomInt(4)]}
+              />
+            </LightBulbBox>
+          )
+        }
       }
     }
 
