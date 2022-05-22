@@ -8,8 +8,8 @@ import NotFoundPage from 'page/NotFoundPage'
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<IndexPage />}>
-        <Route path="*" element={<NotFoundPage />} />
+      <Route path='/' element={<IndexPage />}>
+        <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>
   </BrowserRouter>,
