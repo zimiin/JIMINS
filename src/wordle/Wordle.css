@@ -1,0 +1,16 @@
+.wordle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block {
+  width: 3em;
+  height: 3em;
+  border: solid black;
+  margin: 0.2em;
+}
+
+.block-row {
+  display: flex;
+}
