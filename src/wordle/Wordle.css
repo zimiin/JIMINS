@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.wordle-container:focus {
+  outline: none;
+}
+
 .block {
   width: 3em;
   height: 3em;
